@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rilab</title>
+</head>
+<body>
+     
+    <header>
+        <a href="" class="brand">Rilab</a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Tikets</a>
+                <a href="#">Contacts</a>
+        </div>
+    </header>
+
+    <section class="home">
+        <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful<br><span>Island</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis neque voluptatem non enim iure, iste pariatur exercitationem? Explicabo necessitatibus quam odit, architecto magnam doloribus quia tempore exercitationem corporis soluta!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Drive<br><span>Island</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis neque voluptatem non enim iure, iste pariatur exercitationem? Explicabo necessitatibus quam odit, architecto magnam doloribus quia tempore exercitationem corporis soluta!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>mountains<br><span>Island</span></h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus reiciendis neque voluptatem non enim iure, iste pariatur exercitationem? Explicabo necessitatibus quam odit, architecto magnam doloribus quia tempore exercitationem corporis soluta!</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        //Javascript of responsive navigation menu
+        const menuBtb = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtb.addEventListener("click", () => {
+            menuBtb.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //javascript for video slider navigation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active")
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active")
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active")
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
+
+</body>
+</html>
